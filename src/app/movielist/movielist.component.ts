@@ -42,8 +42,10 @@ export class MovielistComponent {
 
   loadMovies() {
     this.movieService.getMovies().subscribe((movies: Movie[]) => {
+      console.log(movies);
       this.movies = movies;
       this.filteredMovies = movies;
+      return movies;
     })
   }
 
