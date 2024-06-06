@@ -1,0 +1,37 @@
+<div *ngIf="moviesDetails">
+  <button routerLink="/movies">Back</button>
+  <h1>{{ moviesDetails.title }}</h1>
+  <div class="details-container">
+    <div class="image-container">
+      <img [src]="moviesDetails.poster" alt="{{ moviesDetails.title }} poster">
+    </div>
+    <div class="summary-container">
+      <p>{{ moviesDetails.summary }}</p>
+    </div>
+  </div>
+  <div class="additional-details-box">
+    <h2>Details</h2>
+    <table>
+      <tr>
+        <th>Box Office</th>
+        <td>{{ moviesDetails.box_office | budget }}</td>
+      </tr>
+      <tr>
+        <th>Budget</th>
+        <td>{{ moviesDetails.budget | budget }}</td>
+      </tr>
+      <tr>
+        <th>Duration</th>
+        <td>{{ moviesDetails.duration | duration }}</td>
+      </tr>
+      <tr>
+        <th>Producers</th>
+        <td>{{ moviesDetails.producers }}</td>
+      </tr>
+      <tr>
+        <th>Cinematographers</th>
+        <td>{{ moviesDetails.cinematographers }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

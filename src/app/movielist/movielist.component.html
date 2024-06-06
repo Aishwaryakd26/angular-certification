@@ -1,0 +1,23 @@
+<div>
+    <strong>Filters</strong>
+    <div>
+        Title<input type="text" placeholder="Search by Title" [formControl]="titleFilter">
+        Release Year<input type="number" placeholder="Search by Release Year" [formControl]="yearFilter">
+    </div>
+
+    <ul>
+        @for(movie of filteredMovies; track movie.id) {
+        <li>
+            <div>
+                <strong>{{ movie.title }}</strong>
+                <button routerLink="/movies/{{ movie.id }}">Details</button>
+            </div>
+            <div class="movie-list">
+                <span>Release Date: {{ movie.release_date }}</span>
+                <span>Budget: {{ movie.budget | budget }}</span>
+                <span>Duration: {{ movie.duration | duration }}</span>
+            </div>
+        </li>
+        }
+    </ul>
+</div>
