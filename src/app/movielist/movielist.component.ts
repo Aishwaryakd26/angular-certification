@@ -45,7 +45,12 @@ export class MovielistComponent {
       console.log(movies);
       this.movies = movies;
       this.filteredMovies = movies;
-      return movies;
+      if(movies){
+        return movies
+      }
+      else{
+        return {}
+      }
     })
   }
 
