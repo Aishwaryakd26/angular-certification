@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie, MovieDetails } from '../movie.model';
 
-const BASE_URL='http://localhost:4200/movies';
+const BASE_URL='movies';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class MovieService {
   
 
   getMovieById(id: string): Observable<MovieDetails> {
-    return this.http.get<MovieDetails>(`http://localhost:4200/movies/${id}`);
+    return this.http.get<MovieDetails>(`movies/${id}`);
   }
 
   
